@@ -39,7 +39,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['src/state/**/*.{ts,tsx}'],
+    files: ['src/state/**/*.{ts,tsx}', 'src/measurement/**/*.{ts,tsx}'],
     rules: {
       'react-refresh/only-export-components': 'off',
     },
