@@ -1,3 +1,4 @@
+import { StrictMode } from 'react';
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
@@ -70,6 +71,48 @@ describe('render comparison UI', () => {
     naiveMode.focus();
     await user.keyboard('{Enter}');
     expect(naiveMode).toHaveAttribute('aria-pressed', 'true');
+  });
+
+  it('reports a stable isolated comparison without changing the selected mode', async () => {
+    const user = userEvent.setup();
+    render(
+      <StrictMode>
+        <App />
+      </StrictMode>,
+    );
+    const cartCard = screen
+      .getByRole('heading', { name: 'Cart' })
+      .closest('article');
+    const selectedCounts = readRenderCounts();
+    const selectedCart = readCardValue(cartCard!);
+    const comparison = screen.getByRole('status', {
+      name: 'Isolated comparison result',
+    });
+    const compare = screen.getByRole('button', {
+      name: 'Compare cart update',
+    });
+
+    await user.click(compare);
+
+    expect(comparison).toHaveTextContent(
+      'Naive Context: 3 components rendered',
+    );
+    expect(comparison).toHaveTextContent(
+      'Optimized Store: 1 component rendered',
+    );
+    expect(readCardValue(cartCard!)).toBe(selectedCart);
+    expect(readRenderCounts()).toEqual(selectedCounts);
+
+    await user.click(compare);
+
+    expect(comparison).toHaveTextContent(
+      'Naive Context: 3 components rendered',
+    );
+    expect(comparison).toHaveTextContent(
+      'Optimized Store: 1 component rendered',
+    );
+    expect(readCardValue(cartCard!)).toBe(selectedCart);
+    expect(readRenderCounts()).toEqual(selectedCounts);
   });
 });
 

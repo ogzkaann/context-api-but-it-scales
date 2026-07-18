@@ -7,9 +7,11 @@
 
 A focused rendering experiment that puts conventional shared Context beside a small selector-based external store. The interface measures its own component renders so the difference is visible, not benchmark theater.
 
+The direct comparison runs the same clean Cart update through both implementations and reports the observed consumer fan-out.
+
 **[Open the live demo](https://ogzkaann.github.io/context-api-but-it-scales/)**
 
-![The optimized mode after a cart update, showing only the Cart component rendered](./docs/demo.png)
+![A direct clean Cart comparison showing three Naive Context consumers rendered and one Optimized Store consumer rendered](./docs/demo.png)
 
 ## What this project demonstrates
 

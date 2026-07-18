@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { CartCard } from './components/CartCard';
 import { ComparisonResult } from './components/ComparisonResult';
+import { DirectComparison } from './components/DirectComparison';
 import { ModeSwitch } from './components/ModeSwitch';
 import { NotificationsCard } from './components/NotificationsCard';
 import { ThemeCard } from './components/ThemeCard';
@@ -60,6 +61,7 @@ function Demo({
         <NotificationsCard implementation={implementation} />
       </section>
       <ComparisonResult />
+      <DirectComparison />
       <UtilityControls implementation={implementation} />
     </>
   );

@@ -15,7 +15,7 @@ export function ComparisonResult() {
   return (
     <section className="comparison" aria-live="polite" aria-atomic="true">
       <div>
-        <span className="eyebrow">Last update</span>
+        <span className="eyebrow">Selected mode update</span>
         <strong>{summary.lastUpdate}</strong>
       </div>
       <div>
