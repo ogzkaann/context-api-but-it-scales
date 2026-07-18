@@ -124,6 +124,7 @@ h2 {
 }
 
 .mode-switch__option {
+  min-height: 2.75rem;
   border: 0;
   border-radius: 0.28rem;
   padding: 0.55rem 0.7rem;
@@ -193,6 +194,7 @@ h2 {
 }
 
 .button {
+  min-height: 2.75rem;
   border: 1px solid var(--line-strong);
   border-radius: 0.35rem;
   padding: 0.58rem 0.75rem;
