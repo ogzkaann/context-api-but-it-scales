@@ -4,6 +4,13 @@
   "private": true,
   "type": "module",
   "description": "A tiny experiment in not re-rendering everything.",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "context",
+    "use-sync-external-store",
+    "state-management"
+  ],
   "homepage": "https://ogzkaann.github.io/context-api-but-it-scales/",
   "repository": {
     "type": "git",
