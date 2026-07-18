@@ -85,6 +85,14 @@ Vitest and React Testing Library verify the behavior rather than snapshots: sele
 
 GitHub Actions runs install, lint, type-check, test, and production build on pushes and pull requests. A separate least-privilege workflow deploys `dist` to GitHub Pages.
 
+## Quality assurance
+
+- Manually verified at 1440×900, 1280×720, 768×1024, 390×844, approximately 360×800, and 200% browser zoom.
+- Checked for horizontal overflow, clipped controls, readable spacing, and usable touch targets across desktop, tablet, and mobile layouts.
+- Keyboard navigation, visible focus states, and accessible control semantics are supported and tested.
+- `prefers-reduced-motion` is respected so transitions do not become a usability barrier.
+- Release validation covers clean installation, linting, type-checking, behavioral tests, coverage, production build, GitHub Actions, and a live GitHub Pages smoke check.
+
 ## Technical decisions
 
 - No state-management dependency: the point is to expose the subscription mechanism.
