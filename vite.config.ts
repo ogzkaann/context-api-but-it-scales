@@ -2,10 +2,10 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  base: '/context-api-but-it-scales/',
+  base: process.env.VITE_BASE_PATH ?? '/',
   plugins: [react()],
   test: {
-    environment: 'happy-dom',
+    environment: 'jsdom',
     setupFiles: './src/tests/setup.ts',
     coverage: {
       provider: 'v8',

@@ -60,7 +60,7 @@ src/
 
 ## Running locally
 
-Node.js 20 or newer is required.
+Node.js 20.19+ or 22.13+ is required.
 
 ```bash
 npm ci
