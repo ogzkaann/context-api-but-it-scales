@@ -18,7 +18,7 @@ describe('render comparison UI', () => {
     await user.click(screen.getByRole('button', { name: 'Add to cart' }));
 
     await waitFor(() => {
-      expect(screen.getByText('Cart')).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'Cart' })).toBeInTheDocument();
       expect(readRenderCounts().cart).toBeGreaterThan(before.cart);
     });
     const after = readRenderCounts();

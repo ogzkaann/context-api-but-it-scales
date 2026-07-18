@@ -5,7 +5,7 @@ export default defineConfig({
   base: '/context-api-but-it-scales/',
   plugins: [react()],
   test: {
-    environment: 'jsdom',
+    environment: 'happy-dom',
     setupFiles: './src/tests/setup.ts',
     coverage: {
       provider: 'v8',
